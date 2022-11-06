@@ -121,6 +121,8 @@ module.exports = {
       ping: 'ping 1s cubic-bezier(0, 0, 0.2, 1) infinite',
       pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       bounce: 'bounce 1s infinite',
+      fadeIn: 'fadeIn 0.5s ',
+      fadeOut: 'fadeOut 0.5s',
     },
     aspectRatio: {
       auto: 'auto',
@@ -573,7 +575,7 @@ module.exports = {
       '3/4': '75%',
       full: '100%',
     }),
-    keyframes: {
+    keyframes: (theme) => ({
       spin: {
         to: {
           transform: 'rotate(360deg)',
@@ -600,7 +602,27 @@ module.exports = {
           animationTimingFunction: 'cubic-bezier(0,0,0.2,1)',
         },
       },
-    },
+      fadeIn: {
+        '0%': {
+          opacity: 0,
+          width: 0,
+        },
+        '100%': {
+          opacity: 1,
+          width: '100%',
+        },
+      },
+      fadeOut: {
+        '0%': {
+          opacity: 1,
+          width: '100%',
+        },
+        '100%': {
+          opacity: 0,
+          width: 0,
+        },
+      },
+    }),
     letterSpacing: {
       tighter: '-0.05em',
       tight: '-0.025em',

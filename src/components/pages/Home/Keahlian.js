@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { getImageFromAssets } from '../../../utils/helpers/assetHelpers';
+import { Heading1, ItemKeahlian, TabNavigation } from '../../atoms';
 
 export default function Keahlian() {
   const [selected, setselected] = useState(1);
@@ -125,42 +126,24 @@ export default function Keahlian() {
   }, []);
 
   return (
-    <div className="relative bg-white mt-12 p-8 pb-20">
+    <div
+      className="relative bg-white mt-12 p-8 pb-20"
+      style={{
+        minHeight: '65vh',
+      }}>
       <div className="relative flex justify-center items-center">
-        <h1 className="text-4xl font-bold leading-relaxed text-zinc-900 uppercase tracking-wide">
-          Keahlian
-        </h1>
+        <Heading1 heading={'KEAHLIAN'} />
       </div>
 
-      <div className="relative flex justify-center items-center mt-12 mx-auto container max-w-7xl">
-        <ul className="relative flex gap-2 bg-zinc-100 shadow-inner p-1.5 rounded-md">
-          {menuHorizontal.map((item) => (
-            <li
-              key={item.id}
-              onClick={() => handlerClickFilterSkills(item)}
-              className={[
-                'relative px-4 py-1 text-base cursor-pointer hover:bg-zinc-50 hover:text-zinc-800 rounded-md flex justify-center items-center transition-all duration-300 tracking-wide leading-relaxed',
-                selected === item.id
-                  ? 'bg-white shadow-lg shadow-zinc-200 text-zinc-800 font-medium'
-                  : 'bg-transparent text-zinc-500 font-light ',
-              ].join(' ')}>
-              <p>{item.name}</p>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <TabNavigation
+        handlerClick={handlerClickFilterSkills}
+        isActive={selected}
+        listMenu={menuHorizontal}
+      />
 
-      <div className="relative mt-10 grid grid-cols-4 gap-x-4 gap-y-4 mx-auto container max-w-7xl">
+      <div className="relative mt-10 grid grid-cols-3 md:grid-cols-4 -mx-3  gap-x-4 gap-y-4 md:mx-auto container max-w-7xl transition-all duration-300">
         {dataSkillFilter.map((item, index) => (
-          <div
-            key={item.name}
-            className="relative border border-gray-200 rounded-lg p-2 flex justify-center items-center flex-col gap-2 hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-gray-200">
-            <img
-              src={item.image}
-              alt={item.name}
-              className="h-16 object-contain"
-            />
-          </div>
+          <ItemKeahlian item={item} key={index} />
         ))}
       </div>
     </div>

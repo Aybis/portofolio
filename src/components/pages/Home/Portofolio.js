@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { HeadingCustom, ItemPortoflio, TabNavigationTwo } from '../../atoms';
 
 export default function Portofolio() {
   const [menuActive, setmenuActive] = useState('Semua');
@@ -8,35 +9,47 @@ export default function Portofolio() {
     {
       name: 'MyDay (Workfoce Management System)',
       type: 'Frontend',
+      link: '',
       tech: ['React JS', 'CSS', 'Javasript', 'Tailwind'],
+      image: '',
     },
     {
       name: 'SIDARLING (Sistem Informasi Data AR Unbilled to Billing)',
       type: 'Frontend',
+      link: '',
       tech: ['React JS', 'CSS', 'Javasript', 'Tailwind'],
+      image: '',
     },
     {
       name: 'SQUAD IOTA (Aplikasi monitoring absensi dan aktivitas pekerjaan)',
       type: 'Frontend',
+      link: '',
       tech: ['React JS', 'Javasript', 'Tailwind'],
+      image: '',
     },
     {
       name: 'SQUAD (Aplikasi monitoring absensi dan aktivitas pekerjaan)',
       type: 'Frontend',
+      link: '',
       tech: ['React JS', 'Javasript', 'Tailwind'],
+      image: '',
     },
     {
       name: 'POWER HUMANITY',
       type: 'Frontend',
+      link: '',
       tech: ['React JS', 'CSS', 'Javasript', 'Tailwind'],
+      image: '',
     },
     {
       name: 'BIG MUS',
       type: 'Frontend',
+      link: '',
       tech: ['HTML5', 'CSS', 'Javasript'],
+      image: '',
     },
     {
-      name: 'VMAT',
+      name: 'VMAT (VPN Management Automation)',
       type: 'Frontend',
       tech: [
         'Javasript',
@@ -46,86 +59,80 @@ export default function Portofolio() {
         'React JS',
         'Node JS',
       ],
+      image: '',
     },
     {
-      name: 'Funnel',
+      name: 'Dashboard Funnel',
       type: 'Frontend',
       tech: ['Javasript', 'CSS', 'Tailwind', 'React JS'],
+      image: '',
     },
     {
       name: 'LPL',
       type: 'Fullstack',
       tech: ['PHP', 'Laravel', 'MySQL', 'Javasript', 'Boostrap'],
+      image: '',
     },
     {
       name: 'Superslim',
       type: 'Fullstack',
       tech: ['PHP', 'Laravel', 'MySQL', 'Javasript', 'Boostrap', 'jQuery'],
+      image: '',
     },
     {
       name: 'MyWedding',
       type: 'Frontend',
       tech: ['Javasript', 'CSS', 'Tailwind', 'React JS'],
+      image: '',
+    },
+    {
+      name: 'WFM (Workforce Management System)',
+      type: 'Figma',
+      tech: ['Figma'],
+      image: '',
+    },
+    {
+      name: 'LMS (Learning Management System)',
+      type: 'Figma',
+      tech: ['Figma'],
+      image: '',
     },
   ];
 
   return (
-    <div className="relative py-16 bg-zinc-50">
+    <div
+      className="relative py-16 bg-gray-50 transition-all duration-300"
+      style={{
+        minHeight: '70vh',
+      }}>
       <div className="relative mx-auto container max-w-7xl">
         {/* Header */}
         <div className="relative flex justify-center items-center">
-          <h1 className="text-4xl font-bold leading-relaxed text-zinc-900 uppercase tracking-wide">
-            Portofolio
-          </h1>
+          <HeadingCustom
+            heading={'Portofolio'}
+            addClass={
+              'text-center uppercase text-2xl font-semibold md:text-4xl'
+            }
+          />
         </div>
 
         {/* Menu Horizontal */}
         <div className="relative mt-8 flex justify-center items-center">
-          <ul className="relative flex gap-2">
-            {dataMenuHorizontal.map((item, index) => (
-              <li
-                key={index}
-                onClick={() => setmenuActive(item)}
-                className={[
-                  'relative px-4 py-1 text-base border-b-2 pb-2 cursor-pointer hover:bg-zinc-50 hover:text-zinc-800 hover:border-zinc-400 flex justify-center items-center transition-all duration-300 tracking-wide leading-relaxed',
-                  menuActive === item
-                    ? 'border-zinc-800 text-zinc-800 font-semibold'
-                    : 'border-transparent text-zinc-500/70 font-light',
-                ].join(' ')}>
-                {item}
-              </li>
-            ))}
-          </ul>
+          <TabNavigationTwo
+            handlerClick={setmenuActive}
+            listMenu={dataMenuHorizontal}
+            menuActive={menuActive}
+          />
         </div>
 
         {/* Data Portofolio */}
-        <div className="relative grid grid-cols-3 gap-4 p-4 mt-8">
+        <div className="relative grid grid-cols-1 md:grid-cols-3 gap-4 p-4 mt-8">
           {dataPortofolio
             .filter(
               (data) => menuActive === 'Semua' || data.type === menuActive,
             )
             .map((item, index) => (
-              <div
-                key={index}
-                className="relative p-4 bg-white shadow-lg shadow-gray-200/50 rounded-lg flex flex-col justify-between flex-1 h-52">
-                <div>
-                  <h1 className="text-lg font-semibold leading-relaxed text-zinc-800">
-                    {item.name}
-                  </h1>
-                  <p className="text-base font-light text-zinc-900 mt-1">
-                    {item.type}
-                  </p>
-                </div>
-                <ul className="relative flex box-border flex-wrap gap-3 ">
-                  {item.tech.map((itemTech, indexTech) => (
-                    <li
-                      key={indexTech}
-                      className="relative px-2.5 py-1.5 border border-gray-200 bg-zinc-50 text-sm rounded-lg text-zinc-900 font-light">
-                      {itemTech}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <ItemPortoflio item={item} key={index} />
             ))}
         </div>
       </div>

@@ -1,4 +1,14 @@
-export { default as Heading } from './Heading';
-export { default as SubHeading } from './SubHeading';
-export { default as Paragraph } from './Paragraph';
 export { default as Button } from './Button';
+export { default as Heading1 } from './Typography/Heading1';
+export { default as Heading2 } from './Typography/Heading2';
+export { default as Heading3 } from './Typography/Heading3';
+export { default as Paragraph } from './Typography/Paragraph';
+export { default as TabNavigation } from './TabNavigation';
+export { default as ButtonIcon } from './ButtonIcon';
+export { default as ItemKeahlian } from './ItemKeahlian';
+export { default as HeadingCustom } from './Typography/HeadingCustom';
+export { default as ItemPendidikan } from './ItemPendidikan';
+export { default as ItemPekerjaan } from './ItemPekerjaan';
+export { default as ItemSertifikasi } from './ItemSertifikasi';
+export { default as ItemPortoflio } from './ItemPortofolio';
+export { default as TabNavigationTwo } from './TabNavigationTwo';

@@ -31,12 +31,12 @@ export default function Profile() {
 
   const [showDownload, setshowDownload] = useState(false);
   return (
-    <div className="relative w-full pt-12 p-4 mt-12">
-      <div className="relative mx-auto max-w-7xl container p-4 flex justify-center items-center gap-14">
-        <div className="relative flex justify-center items-center ">
+    <div className="relative w-full pt-12 p-4 md:mt-20">
+      <div className="relative mx-auto max-w-7xl container p-2 md:p-4 flex flex-col md:flex-row justify-center items-center gap-8 md:gap-14 box-border">
+        <div className="relative flex justify-center items-center -mt-10">
           {/* Shape Background Profile */}
           <div className="relative h-[27.5rem] w-72 flex justify-center items-center">
-            <div className="absolute h-[25rem] w-full mt-10 rounded-xl bg-gradient-to-br from-gray-100 to-gray-200 "></div>
+            <div className="absolute h-[25rem] w-full mt-10 rounded-xl bg-gradient-to-br from-gray-100 to-gray-200"></div>
             <img
               src={getImageFromAssets('../assets/images/me.png')}
               alt="profile"
@@ -47,17 +47,17 @@ export default function Profile() {
         {/* About Me */}
         <div className="relative flex flex-col justify-center gap-14">
           <div>
-            <h4 className="text-2xl font-medium text-gray-700 leading-relaxed">
+            <h4 className="text-2xl font-normal text-gray-700 leading-relaxed tracking-wide">
               Frontend Developer
             </h4>
-            <h2 className="text-5xl font-bold text-gray-900">
+            <h2 className="text-5xl font-bold text-gray-900 mt-1 tracking-wide">
               Abdul Muchtar Astria
             </h2>
           </div>
 
           {/* Description */}
           <div className="relative -mt-6">
-            <p className="text-gray-700 leading-relaxed tracking-wide font-light w-[32rem]">
+            <p className="text-gray-700 leading-relaxed tracking-wide font-extralight w-auto md:w-[32rem]">
               Bekerja sebagai Frontend Developer di PT PINS Indonesia dengan
               pengalaman 4 tahun. Sarjana Ilmu Komputer di Universitas Bina
               Nusantara. Saya memiliki kemampuan untuk membuat situs web,
@@ -78,10 +78,10 @@ export default function Profile() {
           </div>
 
           {/* CTA Button */}
-          <div className="relative flex w-fit items-end gap-4 -mt-6">
+          <div className="relative flex w-fit items-end gap-4 -mt-14">
             {/* Button View More, btn click go to portfolio */}
             <button className="group relative mt-8 border border-zinc-800 bg-zinc-800 text-sm text-gray-50 px-4 py-2 rounded-md font-medium tracking-wide cursor-pointer transition-all duration-300 hover:shadow-lg hover:shadow-colorone-500/50 flex justify-between items-center gap-4">
-              View more
+              Portofolio
               <span>
                 <ArrowLongRightIcon className="h-5 group-hover:ml-3 transition-all duration-300" />
               </span>

@@ -9,6 +9,11 @@ export const convertDate = (type, time) => {
     year: 'numeric',
   };
 
+  let optionsBulanTahun = {
+    month: 'long',
+    year: 'numeric',
+  };
+
   let optionsShort = {
     month: 'short',
     day: 'numeric',
@@ -30,6 +35,9 @@ export const convertDate = (type, time) => {
   switch (type) {
     case 'tanggalBulanTahun':
       return date.toLocaleDateString('en-EN', options);
+
+    case 'bulanTahun':
+      return date.toLocaleDateString('en-EN', optionsBulanTahun);
 
     case 'tanggalShort':
       return date.toLocaleDateString('en-EN', optionsShort);
