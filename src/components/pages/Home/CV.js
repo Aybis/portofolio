@@ -40,70 +40,70 @@ export default function CV() {
   const pengalaman = [
     {
       name: 'PT. PINS Indonesia',
+      image:
+        'data:image/png;base64,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',
       position: [
         {
           name: 'Frontend Developer',
           year: '2021 - present',
           responsibility: [
-            'Membuat website dengan menggunakan ReactJS',
-            'Membuat website dengan menggunakan NextJS',
-            'Membuat website dengan menggunakan GatsbyJS',
-            'Membuat website dengan menggunakan VueJS',
+            'Mengimplementasikan situs web, aplikasi seluler, dan halaman arahan dari konsep melalui penyebaran.',
+            'Menstandarkan semua output dengan pendekatan dan strategi baru, responsif, mobile-first.',
+            'Membuat halaman wireframe dan mockup.',
+            'Menilai desain UX dan UI untuk kelayakan teknis.',
+            'Mengiris mockup berdasarkan spesifikasi desain rinci.',
+            'Membuat laporan dashboard standar dalam format grafik sesuai kebutuhan.',
+            'Berkolaborasi dengan anggota tim backend untuk mengimplementasikan fitur baru perkembangan.',
+            'Integrasikan Database dengan API.',
           ],
           project: [
-            'MyDay',
+            'MyDay ',
             'SIDARLING',
             'SQUAD IOTA',
-            'SQUAD',
+            'SQUAD PINS',
             'ENMANT',
             'FUNNEL',
+            'BMR',
           ],
         },
       ],
     },
     {
       name: 'PT. PINS Indonesia',
+      image:
+        'data:image/png;base64,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',
       position: [
         {
           name: 'Fullstack Developer',
           year: '2018 - 2021',
           responsibility: [
-            'Membuat website dengan menggunakan ReactJS',
-            'Membuat website dengan menggunakan NextJS',
-            'Membuat website dengan menggunakan GatsbyJS',
-            'Membuat website dengan menggunakan VueJS',
+            'Mengembangkan dan mempresentasikan temuan dan solusi kepada pengguna.',
+            'Perancangan dan Normalisasi Basis Data.',
+            'Mengimplementasikan situs web mulai dari konsep hingga penerapan.',
+            'Memecahkan masalah kompleks menggunakan teknologi web terbaru.',
+            'Buat Sistem Masuk Tunggal.',
+            'Otentikasi dengan LDAP.',
+            'Membuat REST API untuk Frontend tim.',
           ],
-          project: [
-            'MyDay',
-            'SIDARLING',
-            'SQUAD IOTA',
-            'SQUAD',
-            'ENMANT',
-            'FUNNEL',
-          ],
+          project: ['LPL', 'AR', 'SUPERSLIM', 'ENMANT', 'Dashboard Operation'],
         },
       ],
     },
     {
-      name: 'PT. GS Astra',
+      name: 'PT. GS Battery',
+      image:
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuSryS3i9oeZVOkkuViHNC4IG7NfB2jzILZszKU80E9UUpCLzYXL7S6o2sffGmCn1GLoc&usqp=CAU',
       position: [
         {
           name: 'Fullstack Developer',
           year: '2017 ',
           responsibility: [
-            'Membuat website dengan menggunakan ReactJS',
-            'Membuat website dengan menggunakan NextJS',
-            'Membuat website dengan menggunakan GatsbyJS',
-            'Membuat website dengan menggunakan VueJS',
+            'Mengembangkan dan mempresentasikan temuan dan solusi kepada pengguna.',
+            'Perancangan dan Normalisasi Basis Data.',
+            'Mengimplementasikan situs web mulai dari konsep hingga penerapan.',
+            'Memecahkan masalah kompleks menggunakan teknologi terbaru.',
           ],
-          project: [
-            'MyDay',
-            'SIDARLING',
-            'SQUAD IOTA',
-            'SQUAD',
-            'ENMANT',
-            'FUNNEL',
-          ],
+          project: ['Sistem Monitoring Karyawan Berbasis RFID'],
         },
       ],
     },
@@ -115,7 +115,7 @@ export default function CV() {
         {/* Header */}
         <div className="relative flex justify-center items-center">
           <HeadingCustom
-            heading={'Curriculum Vitae (CV)'}
+            heading={'Pengalaman'}
             addClass="text-center uppercase text-3xl md:text-4xl font-bold"
           />
         </div>

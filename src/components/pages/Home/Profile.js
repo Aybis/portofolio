@@ -13,18 +13,18 @@ export default function Profile() {
       icon: getImageFromAssets('/assets/svg/gmail.svg'),
     },
     {
-      name: 'Linkedin',
-      url: '',
+      name: 'Dribble',
+      url: 'https://dribbble.com/abdul_muchtar',
       icon: getImageFromAssets('/assets/svg/dribble.svg'),
     },
     {
       name: 'Whatsaap',
-      url: '',
+      url: 'https://wa.me/+6281280295238',
       icon: getImageFromAssets('/assets/svg/whatsapp.svg'),
     },
     {
       name: 'Linkedin',
-      url: '',
+      url: 'https://www.linkedin.com/in/abdulmuchtar/',
       icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/72px-LinkedIn_icon.svg.png',
     },
   ];
@@ -57,10 +57,10 @@ export default function Profile() {
 
           {/* Description */}
           <div className="relative -mt-6">
-            <p className="text-gray-700 leading-relaxed tracking-wide font-extralight w-auto md:w-[32rem]">
+            <p className="text-gray-700 leading-relaxed tracking-wide font-light w-auto md:w-[32rem]">
               Bekerja sebagai Frontend Developer di PT PINS Indonesia dengan
-              pengalaman 4 tahun. Sarjana Ilmu Komputer di Universitas Bina
-              Nusantara. Saya memiliki kemampuan untuk membuat situs web,
+              pengalaman 4 tahun. Lulusan Sarjana Ilmu Komputer di Universitas
+              Bina Nusantara. Saya memiliki kemampuan untuk membuat situs web,
               aplikasi web, dan aplikasi seluler. Saya juga memiliki kemampuan
               untuk membuat desain UI/UX.
             </p>
@@ -69,11 +69,12 @@ export default function Profile() {
           {/* Contact */}
           <div className="relative grid grid-cols-4 gap-3 w-fit -mt-8">
             {contact.map((item, index) => (
-              <div
+              <button
+                onClick={() => window.open(item.url, '_blank')}
                 key={index}
                 className="relative p-2 bg-zinc-200 cursor-pointer hover:shadow-lg shadow-gray-200/50 transition-all duration-300 hover:bg-zinc-50 rounded-md">
                 <img src={item.icon} alt={index} className="h-6 w-full" />
-              </div>
+              </button>
             ))}
           </div>
 
@@ -86,9 +87,24 @@ export default function Profile() {
                 <ArrowLongRightIcon className="h-5 group-hover:ml-3 transition-all duration-300" />
               </span>
             </button>
+            <button
+              onClick={() =>
+                window.open(
+                  getImageFromAssets(
+                    '../assets/Abdul_Muchtar_Astria_-_Frontend_Developer.pdf',
+                  ),
+                  '_blank',
+                )
+              }
+              className="group relative mt-8 border border-zinc-800 bg-transparent text-sm text-zinc-80 px-4 py-2 rounded-md font-medium tracking-wide cursor-pointer transition-all duration-300 hover:shadow-lg hover:bg-zinc-50 flex justify-between items-center gap-2">
+              <span>
+                <ArrowLongDownIcon className="h-4 transition-all duration-300s" />
+              </span>
+              Download CV
+            </button>
 
             {/* Button Download Portofolio & CV */}
-            <div className="relative flex">
+            <div className="relative hidden">
               <div className="text-sm border font-medium text-zinc-800 bg-transparent border-zinc-800 border-r-0 rounded-l-md px-4 py-2">
                 Download
               </div>

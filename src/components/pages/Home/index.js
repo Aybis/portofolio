@@ -14,6 +14,12 @@ export default function Index() {
       <CV />
       <Certification />
       <Portofolio />
+
+      <footer className="relative w-full bg-neutral-900 py-4 text-white md:flex justify-center items-center text-center font-semibold leading-relaxed tracking-wide hidden">
+        <p>
+          Abdul Muchtar Astria &copy; 2020. All rights reserved. Built with{' '}
+        </p>
+      </footer>
     </Layout>
   );
 }
