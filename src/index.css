@@ -26,3 +26,19 @@ code {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+#profile:target {
+  margin-top: 100px;
+}
+
+#keahlian:target {
+  margin-top: 100px;
+}
+
+#cv:target {
+  margin-top: 100px;
+}
+
+#portofolio:target {
+  margin-top: 100px;
+}

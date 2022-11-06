@@ -110,7 +110,7 @@ export default function CV() {
   ];
 
   return (
-    <div className="relative py-16 bg-zinc-50">
+    <div id="cv" className="section relative py-16 bg-zinc-50">
       <div className="relative mx-auto container max-w-7xl">
         {/* Header */}
         <div className="relative flex justify-center items-center">

@@ -219,8 +219,9 @@ export default function Certification() {
 
   return (
     <div
+      id="sertifikasi"
       className={[
-        'relative px-4 py-16 bg-white max-h-full transition-all duration-300',
+        'section relative px-4 py-16 bg-white max-h-full transition-all duration-300',
         showModal && 'overflow-hidden',
       ].join(' ')}
       style={{

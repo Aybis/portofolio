@@ -241,7 +241,8 @@ export default function Portofolio() {
 
   return (
     <div
-      className="relative py-16 bg-gray-50 transition-all duration-300"
+      id="portofolio"
+      className="section relative py-16 bg-gray-50 transition-all duration-300"
       style={{
         minHeight: '70vh',
       }}>
@@ -276,7 +277,7 @@ export default function Portofolio() {
         </div>
 
         {/* Data Portofolio */}
-        <div className="relative grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 p-4">
+        <div className="relative grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-4 p-4">
           {dataPortofolio
             .filter(
               (data) => menuActive === 'Semua' || data.type === menuActive,

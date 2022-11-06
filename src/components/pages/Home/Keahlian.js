@@ -127,7 +127,8 @@ export default function Keahlian() {
 
   return (
     <div
-      className="relative bg-white mt-12 p-8 pb-20"
+      id="keahlian"
+      className="section relative bg-white mt-12 p-8 pb-20"
       style={{
         minHeight: '65vh',
       }}>
