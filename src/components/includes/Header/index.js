@@ -1,7 +1,53 @@
+import {
+  AcademicCapIcon as AcademicCapIconActive,
+  AdjustmentsHorizontalIcon as AdjustmentsHorizontalIconActive,
+  DocumentCheckIcon as DocumentCheckIconActive,
+  DocumentIcon as DocumentIconActive,
+  IdentificationIcon as IdentificationIconActive,
+} from '@heroicons/react/24/solid';
+import {
+  AcademicCapIcon,
+  AdjustmentsHorizontalIcon,
+  DocumentCheckIcon,
+  DocumentIcon,
+  IdentificationIcon,
+} from '@heroicons/react/24/outline';
 import React, { useState } from 'react';
 
 export default function Index() {
-  const menu = ['Profile', 'Keahlian', 'CV', 'Sertifikasi', 'Portofolio'];
+  const menu = [
+    {
+      name: 'Profile',
+      url: '#profile',
+      icon: IdentificationIcon,
+      iconActive: IdentificationIconActive,
+    },
+    {
+      name: 'Keahlian',
+      url: '#keahlian',
+      icon: AdjustmentsHorizontalIcon,
+      iconActive: AdjustmentsHorizontalIconActive,
+    },
+
+    {
+      name: 'Pengalaman',
+      url: '#pengalaman',
+      icon: AcademicCapIcon,
+      iconActive: AcademicCapIconActive,
+    },
+    {
+      name: 'Sertifikasi',
+      url: '#sertifikasi',
+      icon: DocumentCheckIcon,
+      iconActive: DocumentCheckIconActive,
+    },
+    {
+      name: 'Portofolio',
+      url: '#portofolio',
+      icon: DocumentIcon,
+      iconActive: DocumentIconActive,
+    },
+  ];
   const [menuActive, setmenuActive] = useState('profile');
 
   // on scroll section active menu
@@ -18,22 +64,19 @@ export default function Index() {
         setmenuActive(section.getAttribute('id'));
       }
     });
-
-    console.log(sectionsArr);
   };
 
   window.addEventListener('scroll', onScroll);
 
   // a href click go to section scroll smooth
-  const handleScroll = (e) => {
+  const handleScroll = (e, item) => {
     e.preventDefault();
     // set url with href value
-    window.history.pushState(null, null, e.target.href);
-    setmenuActive(e.target.href.split('#')[1]);
-    const target = e.target.getAttribute('href');
-    const element = document.querySelector(target);
+    window.history.pushState(null, null, item.url);
+    setmenuActive(item.name.toLowerCase());
+    const element = document.querySelector(item.url);
     // element offset top hight header
-    const offsetTop = element.offsetTop - 14;
+    const offsetTop = element.offsetTop + 10;
     window.scrollTo({
       top: offsetTop,
       behavior: 'smooth',
@@ -48,19 +91,22 @@ export default function Index() {
         </h1>
         <ul className="relative grid grid-cols-5 gap-4 place-items-center content-center w-full md:w-fit md:mx-0">
           {menu.map((item, index) => (
-            <li
-              key={index}
-              className="inline-block mr-4 px-2 w-full text-center">
+            <li key={index} className="inline-block w-full text-center">
               <a
-                onClick={handleScroll}
-                href={`#${item.toLowerCase()}`}
+                onClick={(e) => handleScroll(e, item)}
+                href={item.name}
                 className={[
-                  'text-gray-800 hover:text-gray-900 text-center border-transparent border-b-2 text-sm hover:border-gray-600 transition-all duration-300 md:text-base leading-relaxed',
-                  menuActive === item.toLowerCase()
-                    ? 'border-gray-600 font-semibold'
+                  'text-gray-800 flex justify-center items-center hover:text-gray-900 text-center border-transparent border-b-2 text-sm md:hover:border-gray-600 transition-all duration-300 md:text-base leading-relaxed p-2',
+                  menuActive === item.name.toLowerCase()
+                    ? 'md:border-gray-600 font-semibold bg-zinc-100 md:bg-transparent rounded-md md:rounded-none'
                     : 'font-light',
                 ].join(' ')}>
-                {item}
+                {menuActive === item.name.toLowerCase() ? (
+                  <item.iconActive className="h-5 md:hidden" />
+                ) : (
+                  <item.icon className="h-5 md:hidden text-zinc-400" />
+                )}
+                <p className="hidden md:block">{item.name}</p>
               </a>
             </li>
           ))}

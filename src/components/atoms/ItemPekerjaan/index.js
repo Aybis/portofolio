@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Index(props) {
   return (
-    <div className="relative mt-4 bg-white p-4 rounded-md  text-zinc-800">
+    <div className="relative mt-4 bg-white p-4 rounded-md  text-zinc-800 h-fit">
       <div className={['absolute top-2 right-0'].join(' ')}>
         <img
           src={props.item.image}

@@ -30,6 +30,21 @@ export default function Profile() {
   ];
 
   const [showDownload, setshowDownload] = useState(false);
+
+  // button click go to section portofolio
+
+  const goToPortofolio = (e) => {
+    // set url with href value
+    const target = '#portofolio';
+    const element = document.querySelector(target);
+    // element offset top hight header
+    const offsetTop = element.offsetTop - 14;
+    window.scrollTo({
+      top: offsetTop,
+      behavior: 'smooth',
+    });
+  };
+
   return (
     <div id="profile" className="section relative w-full pt-12 p-4 md:mt-20">
       <div className="relative mx-auto max-w-7xl container p-2 md:p-4 flex flex-col md:flex-row justify-center items-center gap-8 md:gap-14 box-border">
@@ -81,7 +96,9 @@ export default function Profile() {
           {/* CTA Button */}
           <div className="relative flex w-fit items-end gap-4 -mt-14">
             {/* Button View More, btn click go to portfolio */}
-            <button className="group relative mt-8 border border-zinc-800 bg-zinc-800 text-sm text-gray-50 px-4 py-2 rounded-md font-medium tracking-wide cursor-pointer transition-all duration-300 hover:shadow-lg hover:shadow-colorone-500/50 flex justify-between items-center gap-4">
+            <button
+              onClick={goToPortofolio}
+              className="group relative mt-8 border border-zinc-800 bg-zinc-800 text-sm text-gray-50 px-4 py-2 rounded-md font-medium tracking-wide cursor-pointer transition-all duration-300 hover:shadow-lg hover:shadow-colorone-500/50 flex justify-between items-center gap-4">
               Portofolio
               <span>
                 <ArrowLongRightIcon className="h-5 group-hover:ml-3 transition-all duration-300" />

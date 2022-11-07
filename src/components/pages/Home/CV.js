@@ -110,7 +110,7 @@ export default function CV() {
   ];
 
   return (
-    <div id="cv" className="section relative py-16 bg-zinc-50">
+    <div id="pengalaman" className="section relative py-16 bg-zinc-50">
       <div className="relative mx-auto container max-w-7xl">
         {/* Header */}
         <div className="relative flex justify-center items-center">
@@ -123,7 +123,7 @@ export default function CV() {
         {/* Content */}
 
         <div className="relative grid grid-cols-1 gap-5 md:gap-8 mt-12">
-          <div className="relative col-span-1 h-fit px-4 md:px-0">
+          <div className="relative col-span-1 h-fit px-4">
             <Heading3 heading={'Pendidikan'} />
 
             <div className="relative md:grid grid-cols-3 gap-4 mt-2">
@@ -133,7 +133,7 @@ export default function CV() {
             </div>
           </div>
 
-          <div className="relative col-span-1 px-4 md:px-0">
+          <div className="relative col-span-1 px-4">
             <Heading3 heading={'Pekerjaan'} />
 
             <div className="relative md:grid grid-cols-3 gap-4 mt-2">
